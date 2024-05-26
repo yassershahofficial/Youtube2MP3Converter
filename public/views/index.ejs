@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT to MP3</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="top-container">
+        <form action="convert-mp3" method="post" id="form">
+            <h1><i class="fa fa-youtube-play"></i>YouTube to MP3 Converter</h1>
+            <h4>Enter the video ID</h4>
+            <div>
+                <input type="text" name="videoID" placeholder="Please enter your link here">
+                <button id="convert-btn">Convert</button>
+            </div>
+        </form>
+    </div>
+    <div class="bottom-container">
+        <% if(typeof success != "undefined" && success){ %>
+            <div class="success">
+                <p><%= song_link %></p>
+                <a href="<%= song_link %>">
+                    <button id="download-btn">DOWNLOAD</button>
+                </a>
+            </div>
+        <% }else if(typeof success != "undefined" && !success){ %>
+            <div class="errors">
+                <p><%= message %></p>
+            </div>
+        <% } %>
+    </div>
+
+    <script src="https://example.com/fontawesome/v6.5.2/js/all.js" data-auto-replace-svg="nest"></script>
+</body>
+</html>
